@@ -1,0 +1,473 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #5c2455 , #37213a, #3f3641, #563f5d);
+    color: #fff;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 999;
+}
+
+header img {
+    width: 50px;
+    transition: transform 0.5s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+#top-panel {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start; 
+}
+
+#login-panel,
+#register-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 95px;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(34, 33, 33, 0.6);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    width: 300px;  
+    height: 300px; /* Dodano tę linijkę, aby okno było kwadratowe */
+}
+
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+}
+.close-button:hover {
+    background-color: #631313;
+}
+
+
+#login-panel.hidden,
+#register-panel.hidden {
+    display: none;
+}
+
+#login-panel input,
+#register-panel input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.styled-input {
+    font-size: 14px;
+    width: 250px;
+    height: 32px;
+    padding: 0 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    border: 1px solid #c8c8c8;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .styled-input:focus {
+    border: 1px solid #6f6fc8;
+  }
+  
+  .styled-input::placeholder {
+    color: #c8c8c8;
+    transition: color 0.3s;
+  }
+  
+  .styled-input:focus::placeholder {
+    color: #6f6fc8;
+    transition: color 0.3s;
+  }
+.input-group {
+    position: relative;
+    right: 0.2px;
+
+}
+
+.input-group input {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    width: 80%; /* Zmieniono na 80%, aby było miejsce na ikonę "oka" */
+}
+
+.input-group img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+.input-group .eye-icon {
+    position: absolute;
+    right: 1px;
+    top: 23px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.input-group checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+button-container button {
+    background: #37213a;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 45%; /* Zmieniono na 45%, aby przyciski były równe */
+}
+
+.button-container button:hover {
+    background: #563f5d;
+    color: white;
+}
+button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #202020;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #1b1b1b;
+    transform: scale(01.12);
+}
+
+/* Reszta stylów */
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#login-panel,
+#register-panel {
+  animation: fadeIn 1s;
+}
+
+
+
+#hero {
+    position: relative;
+    height: 350px;
+    padding-top: 50px; /* Dodano padding-top, aby ikona była trochę niżej */
+}
+
+#hero img {
+    position: relative;
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
+    transition: transform 0.5s ease;
+}
+
+#hero img:hover {
+    transform: scale(1.1);
+}
+
+#hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000;
+}
+.mtext {
+    position: absolute;
+    top: 15%;
+
+    left: 8%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 5px 0px #f3e9e9;
+
+    background: linear-gradient(to right, #5c2455 , #332535, #a049b4, #5b4b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 10px;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(212, 193, 211, 0.1);
+    animation: fadein 2s;
+    margin-left: auto;
+    margin-right: auto;
+        font-size: 21px; /* Dodano tę linijkę */
+
+}
+
+
+.container-shorter-right {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: 5%;
+    width: 80%;
+
+
+}
+
+.container-shorter-left {
+    max-width: 65%;
+    margin-left: 5%;
+    margin-right: auto;
+    width: 80%;
+
+}
+
+.option {
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(212, 193, 211, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    flex-basis: 42%;
+    margin: 0 10.5%;
+}
+
+#purchase-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 10%;
+}
+
+.container img {
+    width: 25%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+.price {
+    color: #6100df;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #5c2455;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buy-button:hover {
+    background-color: #37213a;
+    transform: scale(1.05);
+}
+#info-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #plan-info {
+    flex-basis: 50%;
+  }
+  
+  #support-info {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50%;
+    
+  }
+  
+  .support-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .support-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    
+  }
+h1{
+    height: 23px;
+
+}
+
+ .gtext {
+    
+    height: 40px;
+
+    background: -webkit-linear-gradient(0deg, #ba50cd 5%, #28d470 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+.container img:hover {
+    transform: scale(1.02);
+}
+
+.container .description {
+    width: 60%;
+}
+#discord-panel {
+    background: -webkit-linear-gradient(0deg, #42224d 3%, #280234 50%);
+    color: white;
+
+    text-align: center;
+    padding: 50px 0;
+    margin: 50px 0;
+  }
+  #dpanel{
+    background: linear-gradient(to right, #5c2455 , #37213a, #3f3641, #563f5d);
+
+  }
+  
+  #discord-panel h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  #discord-panel p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .discord-button {
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    color: #4367e9;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .discord-button:hover {
+    color: white;
+    background-color: #5865F2;
+  }
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.option:hover {
+    background-color: #1b1b1b;
+    transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #202020; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Panel social media */
+#social-media-panel {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#social-media-panel a {
+    margin: 0 10px;
+}
+
+#social-media-panel img {
+    width: 40px;
+    transition: transform 0.5s ease;
+}
+
+#social-media-panel img:hover {
+    transform: scale(1.1);
+}
